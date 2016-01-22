@@ -1,0 +1,116 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+	<title>Pongosaurs Rex</title>
+	<!-- Bootstrap core CSS -->
+	 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/base.css" rel="stylesheet">
+    </head>
+	<body>
+		<div class="panel panel-default">
+	    	<div class="panel-heading">
+	    		Control Pannel
+	    	</div>
+	    	<div class="panel-body">
+	    		<div class="row" id="traingProgramHeading">
+		    		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		    			Pre-programed Training
+		    		</div>
+	    		</div>
+	    		<div class="row">
+		    		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		    			<select id="ddlTrainingProgram" class="form-control">
+				            <option value="-1">Manual Speed Control</option>
+				        </select>
+		    		</div>	    		
+	    		</div>
+	    	</div>	    	
+	    </div>
+	    <div class="panel panel-default">
+		    	<div class="panel-heading">
+		    		Manual Control
+		    	</div>
+		    	<div class="panel-body">
+		    		<fieldset>
+		    			<legend>Motors</legend>
+			    		<div class="row">
+				    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				    			Bottom
+				    		</div>
+				    		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				    			<input type="range"  min="0" max="100" />
+				    		</div>
+				    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				    			<input type="text" id="primaryTenant" class="form-control" placeholder="some number"/>
+				    		</div>
+			    		</div>
+			    		<div class="row">
+				    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				    			Left
+				    		</div>
+				    		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				    			<input type="range"  min="0" max="100" />
+				    		</div>
+				    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				    			<input type="text" id="primaryTenant" class="form-control" placeholder="some number"/>
+				    		</div>
+			    		</div>
+			    		<div class="row">
+				    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				    			Right
+				    		</div>
+				    		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				    			<input type="range"  min="0" max="100" />
+				    		</div>
+				    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				    			<input type="text" id="primaryTenant" class="form-control" placeholder="some number"/>
+				    		</div>
+			    		</div>
+		    		</fieldset>
+		    	</div>
+		    </div>
+		    <div class="panel panel-default">
+		    	<div class="panel-heading">
+		    		
+		    	</div>
+		    	<div class="panel-body">
+		    		<div class="row">
+			    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			    			Trajectory L/R
+			    		</div>
+			    		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			    			<input type="range"  min="0" max="100" />
+			    		</div>
+			    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			    			<input type="text" id="primaryTenant" class="form-control" placeholder="some number"/>
+			    		</div>
+		    		</div>
+		    		<div class="row">
+			    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			    			Frequency
+			    		</div>
+			    		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			    			<input type="range"  min="0" max="100" />
+			    		</div>
+			    		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			    			<input type="text" id="primaryTenant" class="form-control" placeholder="some number"/>
+			    		</div>
+		    		</div>
+		    	</div>
+		    </div>
+
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script src="script/bootstrap/bootstrap.min.js"></script>
+	    <script src="script/firebase.js"></script>
+	    <script src="script/index.js"></script>
+	</body>
+</html>
