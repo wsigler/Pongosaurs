@@ -1,0 +1,51 @@
+/* Sweep
+ by BARRAGAN <http://barraganstudio.com>
+ This example code is in the public domain.
+
+ modified 8 Nov 2013
+ by Scott Fitzgerald
+ http://www.arduino.cc/en/Tutorial/Sweep
+ Board: Arduino/Genuiduno Micro
+ Processor: ATmega328(5V, 16MHz)
+ Port: "/dev/cu.usbmodem1451(Arduino/Genuino Micro)"
+ Programmer: ArduinoGemma
+*/
+
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+int inPos = 15;
+int outPos = 165;
+
+int motorPin = 7;
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  //pinMode(motorPin, OUTPUT); 
+}
+
+void loop() {
+  //motorOnThenOff();
+  for (pos = inPos; pos <= outPos; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  for (pos = outPos; pos >= inPos; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+}
+
+void motorOnThenOff(){
+  int onTime = 2500;  //the number of milliseconds for the motor to turn on for
+  int offTime = 1000; //the number of milliseconds for the motor to turn off for
+  
+  digitalWrite(motorPin, HIGH); // turns the motor On
+  delay(onTime);                // waits for onTime milliseconds
+  digitalWrite(motorPin, LOW);  // turns the motor Off
+  delay(offTime);               // waits for offTime milliseconds
+}
