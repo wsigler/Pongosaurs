@@ -1,0 +1,112 @@
+/* Sweep
+  by BARRAGAN <http://barraganstudio.com>
+  This example code is in the public domain.
+
+  modified 8 Nov 2013
+  by Scott Fitzgerald
+  http://www.arduino.cc/en/Tutorial/Sweep
+  Board Arduino Pro or Pro Mini
+  ATmega328(5v)
+*/
+
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+int startingPos = 90;
+int farLeft = 120;
+int farRight = 80;
+
+int bottomMotorPin = 6;
+int leftMotorPin = 3;
+int rightMotorPin = 7;
+
+int bottomPotValue = 0;
+int leftPotValue = 0;
+int rightPotValue = 0;
+
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  //myservo.write(startingPos);
+  //delay(3000);
+
+  /*
+    //Motor Pins
+    pinMode(bottomMotorPin, OUTPUT);
+    pinMode(rightMotorPin, OUTPUT);
+    pinMode(leftMotorPin, OUTPUT);
+
+    //Start motors
+    analogWrite(bottomMotorPin, 254);
+    analogWrite(rightMotorPin, 200);
+    analogWrite(leftMotorPin, 100);
+  */
+}
+
+void loop() {
+  //motorOnThenOff();
+  /*
+    for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+    }
+    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+    }
+
+    myservo.write(0);
+    delay(3000);
+    myservo.write(90);
+    delay(3000);
+    myservo.write(180);
+    delay(3000);
+  */
+
+  for (pos = startingPos; pos <= farLeft; pos += 10) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(3000);                       // waits 15ms for the servo to reach the position
+  }
+
+  for (pos = startingPos; pos >= farRight; pos -= 10) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(3000);                       // waits 15ms for the servo to reach the position
+  }
+
+
+}
+
+void setSpeed() {
+
+}
+
+void motorsOff()
+{
+
+}
+
+/*void motorOnThenOff(){
+  int onTime = 2500;  //the number of milliseconds for the motor to turn on for
+  int offTime = 1000; //the number of milliseconds for the motor to turn off for
+  bottomMotorValue = map(bottomPotValue, 0, 1023, 0, 255);
+  digitalWrite(bottomMotorPin, HIGH); // turns the motor On
+  //delay(onTime);                // waits for onTime milliseconds
+  digitalWrite(bottomMotorPin, LOW);  // turns the motor Off
+  //delay(offTime);
+  digitalWrite(rightMotorPin, HIGH);
+  //delay(onTime);                // waits for onTime milliseconds
+  //digitalWrite(rightMotorPin, LOW);  // turns the motor Off
+  //delay(offTime);
+  //digitalWrite(leftMotorPin, HIGH);
+  //delay(onTime);                // waits for onTime milliseconds
+  //digitalWrite(leftMotorPin, LOW);  // turns the motor Off
+  //delay(offTime);
+
+  }
+*/
+
